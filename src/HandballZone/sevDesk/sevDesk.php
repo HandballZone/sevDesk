@@ -16,23 +16,23 @@ class SevDesk {
 	}
 	
 	public function query($name, $method = 'GET', $model, $parameters = [], $fields = []) {
-		$this -> curl = curl_init();
-		curl_setopt($this -> curl, CURLOPT_URL, 'https://my.sevdesk.de/api/'.$this->sconfig['version'].'/'.$model.'/'.(count($parameters)>0) ? http_build_query($parameters) : null);
-		curl_setopt($this -> curl, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($this -> curl, CURLOPT_HEADER, FALSE);
+		$cc = curl_init();
+		curl_setopt($cc, CURLOPT_URL, 'https://my.sevdesk.de/api/'.$this->sconfig['version'].'/'.$model.'/'.(count($parameters)>0) ? http_build_query($parameters) : null);
+		curl_setopt($cc, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($cc, CURLOPT_HEADER, FALSE);
 		
-		curl_setopt($this -> curl, CURLOPT_POST, TRUE);
+		curl_setopt($cc, CURLOPT_POST, TRUE);
 		
 		// Fields
-		if(count($fields) >0) curl_setopt($this -> curl, CURLOPT_POSTFIELDS, http_build_query($fields));
+		if(count($fields) >0) curl_setopt($cc, CURLOPT_POSTFIELDS, http_build_query($fields));
 		
-		curl_setopt($this -> curl, CURLOPT_HTTPHEADER, array(
+		curl_setopt($cc, CURLOPT_HTTPHEADER, array(
 		  "Authorization: ".$this -> sconfig['API_KEY'],
 		  "Content-Type: application/x-www-form-urlencoded"
 		));
 		
-		$response = curl_exec($this -> curl);
-		curl_close($this -> curl);
+		$response = curl_exec($cc);
+		curl_close($cc);
 		
 		var_dump($response);
 	}
