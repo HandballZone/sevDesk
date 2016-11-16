@@ -3,11 +3,7 @@ namespace HandballZone\sevDesk;
 
 use Illuminate\Config\Repository as Config;
 
-use PaulP\SevDesk\Traits\InvoiceTrait;
-
-class SevDesk {
-	use InvoiceTrait;
-	
+class SevDesk {	
 	private $sconfig;
 	
 	private $curl;
