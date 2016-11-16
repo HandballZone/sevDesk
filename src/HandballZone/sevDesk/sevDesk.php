@@ -1,5 +1,5 @@
 <?php
-namespace PaulP\sevDesk;
+namespace HandballZone\sevDesk;
 
 use Illuminate\Config\Repository as Config;
 
