@@ -9,10 +9,6 @@
             "email": "developer@handball-zone.com"
         }
     ],
-    "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "4.*|5.*"
-    },
     "autoload": {
         "psr-0": {
             "HandballZone\\sevDesk": "src/"
