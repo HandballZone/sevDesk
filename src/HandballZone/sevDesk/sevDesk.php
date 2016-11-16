@@ -13,11 +13,10 @@ class SevDesk {
 			$this -> sconfig = $config -> get('sevdesk');
 		}
 		else throw new Exception('No config found.');
-		
-		$this -> curl = curl_init();
 	}
 	
 	public function query($name, $method = 'GET', $model, $parameters = [], $fields = []) {
+		$this -> curl = curl_init();
 		curl_setopt($this -> curl, CURLOPT_URL, 'https://my.sevdesk.de/api/'.$this->sconfig['version'].'/'.$model.'/'.(count($parameters)>0) ? http_build_query($parameters) : null);
 		curl_setopt($this -> curl, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($this -> curl, CURLOPT_HEADER, FALSE);
