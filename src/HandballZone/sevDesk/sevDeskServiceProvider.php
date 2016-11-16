@@ -13,7 +13,7 @@ class sevDeskServiceProvider extends ServiceProvider {
     $laravelVersion = substr($appVersion, 0, strpos($appVersion, '.'));
     
     if($laravelVersion == 5) {
-      $this -> mergeConfigFrom(__DIR__./../../config/config.php', 'sevDesk');
+      $this -> mergeConfigFrom(__DIR__.'/../../config/config.php', 'sevDesk');
       
       $this -> publishes([__DIR__.'/../../config/config.php' => config_path('sevDesk.php')]);
     }
