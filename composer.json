@@ -1,0 +1,22 @@
+{
+    "name": "HandballZone/sevDesk",
+    "description": "sevDesk API für Laravel",
+	"keywords": ["sevdesk", "laravel", "laravel5"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HandballZone",
+            "email": "developer@handball-zone.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.*|5.*",
+    },
+    "autoload": {
+        "psr-0": {
+            "HandballZone\\sevDesk": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
