@@ -20,6 +20,7 @@ class sevDeskServiceProvider extends ServiceProvider {
     
     $this -> app[sevDesk::class] = $this -> app -> share(function($app) {
       return new sevDesk($app['config'], $app['session.store']);
+    });
   }
   public function provides() {
     return ['sevDesk'];
