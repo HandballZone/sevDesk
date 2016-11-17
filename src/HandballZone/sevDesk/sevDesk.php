@@ -6,8 +6,6 @@ use Illuminate\Config\Repository as Config;
 class SevDesk {	
 	private $sconfig;
 	
-	private $curl;
-	
 	public function __construct(Config $config) {
 		if($config -> has('sevdesk')) {
 			$this -> sconfig = $config -> get('sevdesk');
